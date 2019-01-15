@@ -91,6 +91,27 @@ public class Trie {
         // Set bIsEnd true for last character
         crawl.setIsEnd(true);
     }
+	
+		public void printTrie(TrieNode node, String s) {
+		String strSoFar = s;
+		strSoFar += String.valueOf(node.getValue());
+		if (node.isEnd()) {
+			System.out.println(strSoFar);
+			return;
+		}
+
+		Stack<TrieNode> stack = new Stack<TrieNode>();
+		Iterator<TrieNode> itr = node.getChildren().values().iterator();
+		while (itr.hasNext()) {
+			stack.add(itr.next());
+			// stack.push(itr.next());
+		}
+		while (!stack.empty()) {
+			TrieNode t = stack.pop();
+			printTrie(t, strSoFar);
+		}
+
+	}
     public String getMatchingPrefix(String input)  {
         String result = ""; // Initialize resultant string
         int length = input.length();  // Find length of the input string       
