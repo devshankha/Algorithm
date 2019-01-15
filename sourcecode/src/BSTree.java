@@ -53,7 +53,7 @@ class Queue {
 		}
 		bsTree[++top] = bs;
 		noOfitems++;
-		// System.out.println("œnseted "+bs.num);
+		// System.out.println("√ènseted "+bs.num);
 
 	}
 
@@ -63,7 +63,7 @@ class Queue {
 			return null;
 		}
 		noOfitems--;
-		// System.out.println(" Àlement removed ");
+		// System.out.println(" √ãlement removed ");
 		// rear++;
 		// System.out.println(rear);
 		return bsTree[++rear];
@@ -81,6 +81,32 @@ public class BSTree {
 		this.num = num;
 		this.left = null;
 		this.right = null;
+	}
+	
+		static void inOrderNonrec(BSTree b) {
+		
+		Stack<BSTree> s = new Stack<BSTree>();
+		BSTree temp = b;
+		while (temp != null || !s.isEmpty()) {
+			while (temp != null) {
+				/*
+				 * place pointer to a tree node on the stack before traversing the node's left
+				 * subtree
+				 */
+				s.push(temp);
+				temp = temp.left;
+			}
+			temp = s.pop();
+
+			System.out.print(temp.num + " ");
+
+			/*
+			 * we have visited the node and its left subtree. Now, it's right subtree's turn
+			 */
+			temp = temp.right;
+
+		}
+
 	}
     //insets an element in the BST
 	public void inset(BSTree b, Integer n) {
