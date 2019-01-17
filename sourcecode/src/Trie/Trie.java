@@ -91,6 +91,38 @@ public class Trie {
         // Set bIsEnd true for last character
         crawl.setIsEnd(true);
     }
+	///this is used to search elements in a trie
+	public boolean search(String input) {
+		boolean checkBool = true;
+		int length = input.length();
+		TrieNode crawl = root;
+
+		// Iterate through all characters of input string 'str' and traverse
+		// down the Trie
+		int level = 0;
+		boolean contains = false;
+		for (level = 0; level < length; level++) {
+			// Find current character of str
+			char ch = input.charAt(level);
+
+			// HashMap of current Trie node to traverse down
+			HashMap<Character, TrieNode> child = crawl.getChildren();
+
+			// See if there is a Trie edge for the current character
+			if (child.containsKey(ch)) {
+				crawl = child.get(ch);
+				continue;
+			} else {
+				checkBool = false;
+				System.out.println("IT SHOULD COME HERE");
+				break;
+			}
+		}
+
+		if (crawl.isEnd() && checkBool)
+			contains = true;
+		return contains;
+	}
 	
 		public void printTrie(TrieNode node, String s) {
 		String strSoFar = s;
