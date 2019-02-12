@@ -22,8 +22,8 @@ public class Graph {
 		for (int i=0; i < list.length;i++) {
 			System.out.println("Adjacency list of vertex " + i);
 			System.out.print("head");
-			for (Integer m:list[i]) {
-				System.out.print(" -> "+m); 
+			for (int k=0; k < list[i].size();k++) {
+				System.out.print(" -> "+list[i].get(k)); 
 				
 			}
 			System.out.println("\n");
