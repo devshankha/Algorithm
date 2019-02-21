@@ -82,6 +82,22 @@ public class BSTree {
 		this.left = null;
 		this.right = null;
 	}
+	//My own version of this method
+	//appears to be working
+	static void preOrderNonRec(BSTree b) {
+		Stack s = new Stack();
+		BSTree temp = b;
+		while (temp != null || !s.isEmpty()) {
+			while(temp != null) {
+				System.out.print(temp.num+" ");
+				s.push(temp);
+				temp = temp.left;				
+			}
+			BSTree c = s.pop();
+			temp = c.right;
+		}
+		
+	}
 	
 		static void inOrderNonrec(BSTree b) {
 		
