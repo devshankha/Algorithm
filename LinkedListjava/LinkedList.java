@@ -8,6 +8,35 @@ public class LinkedList {
 		this.value = value;
 		this.next = null;
 	}
+	//reverse k elements of a linkedlist at a time
+	LinkedList reverseK(LinkedList head, int k) 
+    { 
+       LinkedList current = head; 
+       LinkedList next = null; 
+       LinkedList prev = null; 
+         
+       int count = 0; 
+  
+       /* Reverse first k nodes of linked list */
+       while (count < k && current != null)  
+       { 
+           next = current.next; 
+           current.next = prev; 
+           prev = current; 
+           current = next; 
+           count++; 
+       } 
+  
+       /* next is now a pointer to (k+1)th node  
+          Recursively call for the list starting from current. 
+          And make rest of the list as next of first node */
+       if (next != null)  
+          head.next = reverseK(next, k); 
+  
+       // prev is now head of input list 
+       return prev; 
+    }          
+
 	//This method inserts nodes at the end of the linkedlist
 	public void insertEnd(LinkedList p, String value){
 		if (p == null)
