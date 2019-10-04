@@ -60,6 +60,16 @@ public class BinarySearchTree {
 		ArrayList<LinkedList<Integer>> rightSeq = allSequences(node.right);
 		System.out.println(leftSeq + " " + leftSeq.size());
 		System.out.println(rightSeq + " " + rightSeq.size());
+		//instead of a loop here, we could have also used this
+		/*LinkedList<Integer> m1 = leftSeq.get(0);
+		LinkedList<Integer> m2 = rightSeq.get(0);
+		ArrayList<LinkedList<Integer>> weaved = new ArrayList<LinkedList<Integer>>();
+		weaveLists(m1,m2, weaved, prefix);
+		result.addAll(weaved); */
+		
+		
+		
+		
 		/*
 		 * Weave together lists from left and right sides
 		 */
