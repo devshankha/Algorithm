@@ -15,6 +15,23 @@ class Node
 class BinaryTree 
 {
     Node root;
+  // find common ancestor of a binary tree, note, this need not be a binary search tree
+  //code taken from Tushar youtube --   https://www.youtube.com/watch?v=13m9ZCB8gjw
+  Node findLCA(Node root, Node p, Node q) {
+    if (root == null)
+      return null;
+    if ( root == p || root == q)
+      return root;
+    Node left =  findLCA(root.left, Node p, Node q);
+    Node right = findLCA(root.right, Node p, Node q);
+    if (left != null && right != null)
+      return root;
+    if (left == null && right == null)
+      return null;
+    return left == null?right:left;
+    
+    
+  }
       
     /* Function to find LCA of n1 and n2. The function assumes that both
        n1 and n2 are present in BST */
