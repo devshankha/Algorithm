@@ -1,5 +1,6 @@
 //count the number of BST that can be formed with
 //n distinct keys
+// code is taken from https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/CountNumberOfTreesInBST.java
 public class CountNumberOfTreesInBST {
 	public static int countTrees(int n){
         int T[] = new int[n+1];
