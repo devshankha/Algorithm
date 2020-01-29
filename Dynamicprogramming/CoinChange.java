@@ -26,6 +26,8 @@ public class CoinChange {
 				}
 
 				else {
+					//excluding the ith coin+including the ith coin,
+					
 					table[i][j] = table[i - 1][j] + table[i][j -i];
 				}
 
