@@ -37,6 +37,27 @@ public class CoinChange {
 		return table[m][n];  
 		
 	}
+	
+	static int recCount(int S[], int m, int n) {
+		// If n is 0 then there is 1 solution  
+        // (do not include any coin) 
+		if (n == 0)
+			return 1;
+		// If n is less than 0 then no  
+        // solution exists 
+		if (n < 0)
+			return 0;
+		// If there are no coins and n  
+        // is greater than 0, then no 
+        // solution exist 
+		if (n >= 1 && m<= 0)
+			return 0;
+		//(S, m-1, n) -- excluding coin s[m-1]
+		//(S, m, n-S[m-1]) -- including coin s[m-1]
+		return recCount(S, m-1, n)+ recCount(S, m, n-S[m-1]);
+			
+
+	}
 	public static void main(String[] args) {
 		//start with simple example 1,2,3 and sum as 4
 		int arr[] = {1, 2,3}; 
