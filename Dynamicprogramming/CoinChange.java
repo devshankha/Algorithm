@@ -29,6 +29,9 @@ public class CoinChange {
 					//excluding the ith coin+including the ith coin,
 					
 					table[i][j] = table[i - 1][j] + table[i][j -i];
+					//done some testing and this line also works
+					table[i][j] = table[i - 1][j] + table[i][j -S[i-1]];
+					
 				}
 
 			}
