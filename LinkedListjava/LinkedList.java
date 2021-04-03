@@ -115,6 +115,8 @@ public class LinkedList {
 		return node;
 	}
 	//merge alternate nodes of linkedlist
+	//this is my own interpretation,
+	//lengthy, but it seems to work
 	static LinkedList mergeAlternate(LinkedList l1,LinkedList l2){
 		LinkedList c=null;
 		LinkedList temp1 = l1;
