@@ -1,4 +1,8 @@
 
+//generate permutations of a string, this is very important,
+//the code is taken from == https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+//backtracking is used here, little complicated to understand, as this uses a combination of recursion and loops
+
 public class Permutate {
 	
 	public String swap(String a, int i, int j)
