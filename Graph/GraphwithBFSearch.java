@@ -4,7 +4,7 @@
  * Code is inspired from ==https://www.geeksforgeeks.org/shortest-path-unweighted-graph/
  * In addition to the usual BFS, maintain two arrays dist and pred, where
  *dist[i] stores the distance of vertex i from the source vertex and array 
- *pred[0, 1, ….., v-1] such that pred[i] represents the immediate predecessor of the vertex i 
+ *pred[0, 1, â€¦.., v-1] such that pred[i] represents the immediate predecessor of the vertex i 
  *in the breadth first search starting from the source.
  * 
  * 
@@ -40,6 +40,10 @@ public class GraphwithBFSearch {
 		// Mark all the vertices as not visited(By default
 		// set as false)
 		boolean visited[] = new boolean[noOfVertices];
+		
+		// pred[i] array stores predecessor of
+                // i and distance array stores distance of i
+                // from src
 
 		int dist[] = new int[noOfVertices];
 
