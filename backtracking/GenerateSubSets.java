@@ -16,6 +16,10 @@ public class GenerateSubSets {
 		return subsets;
 
 	}
+	 //index ,,keep track of the index
+	//nums -- the numbers that are available
+	//current ==a list to represent our current subset
+	//subsets === our results
 
 	public static void generateSubSets(int index, int[] nums, List<Integer> current, List<List<Integer>> subsets) {
       subsets.add(new ArrayList<>(current)); 
